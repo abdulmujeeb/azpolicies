@@ -1,0 +1,19 @@
+{
+    "policyRule": {
+        "if": {
+            "allOf": [
+                {
+                    "field": "location",
+                    "notIn": "[parameters('listOfAllowedLocations')]"
+                },
+                {
+                    "field": "type",
+                    "notEquals": "Microsoft.Resources/resourceGroups"
+                }
+            ]
+        },
+        "then": {
+            "effect": "deny"
+        }
+    }
+}
